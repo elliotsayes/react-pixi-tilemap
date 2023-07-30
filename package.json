@@ -32,14 +32,15 @@
   "author": "David Minnerly",
   "license": "MIT",
   "peerDependencies": {
-    "@inlet/react-pixi": ">=6.5.2",
-    "pixi.js": ">=6.0.4",
-    "react": ">=17.0.2"
+    "@pixi/react": ">=7.0.0",
+    "react": ">=18.0.0"
   },
   "dependencies": {
-    "tmx-parser": "github:eioo/node-tmx-parser"
+    "tmx-parser": "github:soryy708/ts-tmx-parser"
   },
   "devDependencies": {
+    "@types/pixi.js": "^5.0.0",
+    "@types/react": "^18.2.17",
     "concurrently": "^6.2.0",
     "microbundle": "^0.13.0"
   }
