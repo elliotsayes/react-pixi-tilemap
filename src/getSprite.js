@@ -1,6 +1,6 @@
 import path from 'path'
 import { Rectangle, Texture } from 'pixi.js'
-import { Sprite } from "@inlet/react-pixi"
+import { Sprite } from "@pixi/react"
 import React from "react"
 
 const getTilesetForGID = (gid, tilesets) => {

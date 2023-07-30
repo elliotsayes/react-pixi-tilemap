@@ -1,4 +1,4 @@
-import { Stage, Sprite } from '@inlet/react-pixi';
+import { Stage, Sprite } from '@pixi/react'
 import { Texture } from '@pixi/core';
 import { Tilemap, useTilemapLoader } from 'react-pixi-tilemap'
 

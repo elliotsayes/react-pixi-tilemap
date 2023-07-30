@@ -1,48 +1,47 @@
-import React, { useMemo } from 'react'
-import { Container } from "@inlet/react-pixi"
-import getSprite from './getSprite'
+import React, { useMemo } from "react";
+import { Container } from "@pixi/react";
+import getSprite from "./getSprite";
 
 const getTileSprites = (layer, map) => {
-    const sprites = []
+    const sprites = [];
 
     for (let y = 0; y < map.height; y++) {
         for (let x = 0; x < map.width; x++) {
-            const i = x + y * map.width
-            const tile = layer.tiles[i]
+            const i = x + y * map.width;
+            const tile = layer.tiles[i];
 
             if (tile?.gid > 0) {
-                sprites.push(getSprite('tile', tile, map))
+                sprites.push(getSprite("tile", tile, map));
             }
         }
     }
 
-    return sprites
-}
+    return sprites;
+};
 
 const getObjectSprites = (layer, map) => {
-    return layer.objects.map(object => {
+    return layer.objects.map((object) => {
         if (object.gid) {
-            return getSprite('object', object, map)
+            return getSprite("object", object, map);
         }
-    })
-}
+    });
+};
 
 const Layer = ({ layer, map }) => {
     if (!layer.visible) {
-        return null
+        return null;
     }
 
     const sprites = useMemo(() => {
-        if (layer.type === 'tile') {
-            return getTileSprites(layer, map)
-        } else if (layer.type === 'object') {
-            return getObjectSprites(layer, map)
+        if (layer.type === "tile") {
+            return getTileSprites(layer, map);
+        } else if (layer.type === "object") {
+            return getObjectSprites(layer, map);
         }
-    }, [ layer ] )
+    }, [layer]);
 
-    return <Container alpha={layer.opacity}>
-        {sprites}
-    </Container>
-}
+    return <Container alpha={layer.opacity}>{sprites}</Container>;
+};
 
-export default Layer
+export default Layer;
+
