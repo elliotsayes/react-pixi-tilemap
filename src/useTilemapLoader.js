@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import tmx from 'tmx-parser'
 
+tmx.readFile = (path, callback) => {
+    fetch(path)
+        .then(response => response.text())
+        .then(text => callback(text))
+}
+
 const useTilemapLoader = (tilemapPath) => {
     const [map, setMap] = useState(null)
 
