@@ -4,7 +4,7 @@ import tmx from 'tmx-parser'
 tmx.readFile = (path, callback) => {
     fetch(path)
         .then(response => response.text())
-        .then(text => callback(text))
+        .then(text => callback(null, text))
 }
 
 const useTilemapLoader = (tilemapPath) => {
